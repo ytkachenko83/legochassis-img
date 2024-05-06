@@ -1,0 +1,25 @@
+#!/bin/sh
+
+case "$1" in
+    start)
+        echo "Loading kernel modules"
+        CURR_DIR=$(dirname $0)
+        cd $(dirname $(find /lib/modules -name "scull.ko"))
+        scull_load
+        module_load faulty
+        modprobe hello
+        cd $CURR_DIR
+        ;;
+    stop)
+        echo "Unloading kernel modules"
+        scull_unload
+        module_unload faulty
+        rmmod hello
+        ;;
+    *)
+        echo "Usage: $0 {start|stop}"
+
+    exit 1
+esac
+
+exit 0
