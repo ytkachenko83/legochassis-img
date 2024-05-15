@@ -3,7 +3,7 @@
 # AESDCHAR
 #
 ##############################################################
-AESDCHAR_VERSION = '8fd5ae1f9f9e248312f3b6a18809f3598f545ce5'
+AESDCHAR_VERSION = 'c8d58084b95c898e2382da5fa72d04071be39122'
 AESDCHAR_SITE = 'git@github.com:cu-ecen-aeld/assignments-3-and-later-ytkachenko83.git'
 AESDCHAR_SITE_METHOD = git
 AESDCHAR_GIT_SUBMODULES = YES
