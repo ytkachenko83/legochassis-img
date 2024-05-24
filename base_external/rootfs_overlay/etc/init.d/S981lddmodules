@@ -3,20 +3,9 @@
 case "$1" in
     start)
         echo "Loading kernel modules"
-        CURR_DIR=$(dirname $0)
-        cd $(dirname $(find /lib/modules -name "scull.ko"))
-        scull_load
-        module_load faulty
-        modprobe hello
-        aesdchar_load
-        cd $CURR_DIR
         ;;
     stop)
         echo "Unloading kernel modules"
-        scull_unload
-        module_unload faulty
-        rmmod hello
-        aesdchar_unload
         ;;
     *)
         echo "Usage: $0 {start|stop}"
